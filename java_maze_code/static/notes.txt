@@ -1,0 +1,81 @@
+NSEW = 0
+-SEW = 1
+N-EW = 2
+NS-W = 4
+NSE- = 8
+NS-- = 12
+--EW = 3
+N--W = 6
+N-E- = 10
+-S-W = 5
+-SE- = 9
+N--- = 14
+-S-- = 13
+--E- = 11
+---W = 7
+---- = 15
+
+		* 1 = N
+		* 2 = S
+		* 4 = E
+		* 8 = W
+
+00001
+00010
+00100
+00101
+00110
+00111
+01000
+01001
+01010
+01011
+01100
+01101
+01110
+01111
+10000
+10001
+10010
+10011
+10100
+
+
+00101
+
+00001
+00010
+00101
+01001
+
+There is no wall if the heading has bitwise equivalence to the current cell.
+
+If there is a western wall, the value of the maze coordinate has no bit-wise equivalence to 8
+
+If there is an eastern wall, the value of the maze coordinate has no bit-wise equivalence to 4
+
+If there is a northern wall, the value of the maze coordinate has no bit-wise equivalence to 1
+
+If there is a southern wall, the value of the maze coordinate has no bit-wise equivalence to 2
+
+
+
+
+		04 - 00101
+		12 - 01101
+		08 - 01001
+		eqivalence to 1,2,4
+
+		01 - 00001
+		02 - 00010
+		04 - 00101
+		08 - 01001
+		     00111
+
+
+
+
+
+
+
+

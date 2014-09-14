@@ -1,0 +1,149 @@
+CAPTAINS LOG
+04/08/2014
+
+Test IR sensors in maze. Right sensor is still fucked up. IR now powers on, but sensors reads oddly increasing and decreasing values. Here are the average values though:
+
+DIAG_RIGHT: 270
+LEFT_SIDE: WEIRD Starts around 900 and decreases continually
+LEFT_DIAG: 320
+FRONT_LEFT: 115
+FRONT_RIGHT: 35
+
+04/09/2014
+
+Observed: For forward sensors, a consisten increase of 10 was found for a wall two blocks ahead
+
+EMPTY:
+FRONT_RIGHT: 57
+FRONT_LEFT: 126
+DIAG_RIGHT: 125
+DIAG_LEFT: 144
+SIDE_LEFT: 75
+SIDE_RIGHT: NA
+
+TWO FRONT:
+FRONT_RIGHT: 67
+FRONT_LEFT: 140
+DIAG_RIGHT: 135
+DIAG_LEFT: 149
+SIDE_RIGHT: NA
+SIDE_LEFT: 76
+
+ONE FRONT
+FRONT_RIGHT: 95
+FRONT_LEFT: 172
+DIAG_RIGHT: 148
+DIAG_LEFT: 162
+SIDE_RIGHT: NA
+SIDE_LEFT: 93
+
+ZERO FRONT (Inside dead end)
+ _
+|x|
+FRONT_RIGHT: 854 
+FRONT_LEFT: 993
+DIAG_RIGHT: 392
+DIAG_LEFT: 368
+SIDE_RIGHT: NA
+SIDE_LEFT: 588
+
+ONE DEAD END (Inside an enclosed dead end with one empty block between front of robot and terminus)
+
+ _
+| |
+|^|
+FRONT_RIGHT: 95
+FRONT_LEFT: 175
+DIAG_RIGHT: 250
+DIAG_LEFT: 340
+SIDE_RIGHT: NA
+SIDE_LEFT: 600
+
+TWO DEAD END
+
+ _
+| |
+| |
+|^|
+FRONT_RIGHT: 65
+FRONT_LEFT: 140
+DIAG_RIGHT: 270
+DIAG_LEFT: 314
+SIDE_RIGHT: NA
+SIDE_LEFT: 600
+
+SINGLE TIP OUT
+
+  _
+_| |_
+  ^  
+-----
+
+FRONT_RIGHT: 90
+FRONT_LEFT: 167
+DIAG_RIGHT: 256
+DIAG_LEFT: 247
+SIDE_RIGHT: NA
+SIDE_LEFT: 75
+
+
+T INTERSECTION
+
+_|V|_
+     
+-----
+
+FRONT_RIGHT: 92
+FRONT_LEFT: 163
+DIAG_RIGHT: 208
+DIAG_LEFT: 242
+SIDE_RIGHT: NA
+SIDE_LEFT: 663
+
+
+
+TURN RIGHT
+ _____
+|  ___
+|^|
+
+FRONT_RIGHT: 96
+FRONT_LEFT: 171
+DIAG_RIGHT: 153
+DIAG_LEFT: 323
+SIDE_RIGHT: NA
+SIDE_LEFT: 704
+
+
+TURN LEFT
+_____
+___  |
+   |^|
+
+FRONT_RIGHT: 93
+FRONT_LEFT: 166
+DIAG_RIGHT: 256
+DIAG_LEFT: 244
+SIDE_RIGHT: NA
+SIDE_LEFT: 663
+
+
+T INTERSECTION OUT
+
+_| |_
+  ^  
+-----
+
+FRONT_RIGHT: 61
+FRONT_LEFT: 131
+DIAG_RIGHT: 240
+DIAG_LEFT: 260
+SIDE_RIGHT: NA
+SIDE_LEFT: 74
+
+
+
+MEASUREMENT OF POSITION AT WHICH DIAGS REACH NEXT CELL
+If the bot is positioned in the center of a cell, a value of ~200 indicates no wall ahead on the right. A value of ~250 indicates a wall. It appears to be better to judge wall vs. no wall as in ==250 or !=250 as opposed to no wall vs. wall.
+
+A value of around 300 indicates a wall ahead on the left. A value around 200 indicates no wall ahead on the left. Again, identifing as wall positive appears to be superior.
